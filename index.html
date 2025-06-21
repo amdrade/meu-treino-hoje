@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Treino de Academia</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Meu App de Treino</h1>
+      <nav class="tab-nav">
+        <button class="tab-button active" data-tab="tab-treinar">
+          Treinar Hoje
+        </button>
+        <button class="tab-button" data-tab="tab-gerenciar">
+          Gerenciar Listas
+        </button>
+        <button class="tab-button" data-tab="tab-historico">Histórico</button>
+      </nav>
+    </header>
+
+    <main>
+      <div id="tab-treinar" class="tab-content active">
+        <section>
+          <h2>Selecione o Treino de Hoje</h2>
+          <select id="lista-treino-select"></select>
+        </section>
+        <section id="lista-exercicios-treino">
+          <h3 id="titulo-exercicios-treino">Exercícios:</h3>
+          <div id="container-treino" class="card-container"></div>
+        </section>
+      </div>
+
+      <div id="tab-gerenciar" class="tab-content">
+        <section id="gerenciamento-listas">
+          <h2>Gerenciar Listas de Treino</h2>
+          <div class="form-group">
+            <select id="lista-gerenciamento-select"></select>
+            <button id="btn-nova-lista">Criar Nova Lista</button>
+            <button id="btn-deletar-lista" class="btn-perigo">
+              Deletar Lista Selecionada
+            </button>
+          </div>
+        </section>
+        <hr />
+        <section id="cadastro-exercicio">
+          <h3>Adicionar / Editar Exercícios</h3>
+          <form id="form-exercicio">
+            <div class="form-group">
+              <input
+                type="text"
+                id="nome-exercicio"
+                placeholder="Nome do Exercício"
+                required
+              />
+              <input
+                type="text"
+                id="carga-exercicio"
+                placeholder="Carga (ex: 20kg)"
+                required
+              />
+              <input
+                type="text"
+                id="repeticoes-exercicio"
+                placeholder="Repetições (ex: 3x12)"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="obs-exercicio"
+                placeholder="Observação (opcional)"
+              />
+            </div>
+            <button type="submit">Adicionar Exercício à Lista</button>
+          </form>
+        </section>
+        <section id="lista-exercicios-gerenciamento">
+          <h3>Exercícios na Lista:</h3>
+          <div id="container-gerenciamento" class="card-container"></div>
+        </section>
+      </div>
+
+      <div id="tab-historico" class="tab-content">
+        <section id="historico-treinos">
+          <h2>Histórico de Treinos Concluídos</h2>
+          <div id="container-historico"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
